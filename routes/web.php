@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TaskController;
 use App\Http\Controllers\CategoryController;
 
 /*
@@ -28,4 +29,5 @@ Route::middleware([
     })->name('dashboard');
 
     Route::resource('categories', CategoryController::class)->except('show');
+    Route::resource('tasks', TaskController::class);
 });
