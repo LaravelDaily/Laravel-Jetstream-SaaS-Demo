@@ -28,6 +28,6 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::resource('categories', CategoryController::class)->except('show');
+    Route::resource('categories', CategoryController::class)->except('show')->middleware('role:admin');
     Route::resource('tasks', TaskController::class);
 });

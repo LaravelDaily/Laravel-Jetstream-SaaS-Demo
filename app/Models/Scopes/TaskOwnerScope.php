@@ -11,6 +11,8 @@ class TaskOwnerScope implements Scope
 {
     public function apply(Builder $builder, Model $model)
     {
-        $builder->where('user_id', auth()->id());
+        $builder->when(auth()->user()->hasRole('user'), function (Builder $builder) {
+            $builder->where('user_id', auth()->id());
+        });
     }
 }
