@@ -24,10 +24,5 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-
     Route::resource('categories', CategoryController::class)->except('show')->middleware('role:admin');
-    Route::resource('tasks', TaskController::class);
 });

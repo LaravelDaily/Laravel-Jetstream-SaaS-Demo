@@ -19,6 +19,15 @@
                 <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>
 
+            <div class="mt-2">
+                <x-jet-label for="subdomain" :value="__('Subdomain')" />
+
+                <div class="flex items-baseline">
+                    <x-jet-input id="subdomain" class="block mt-1 mr-2 w-full" type="text" name="subdomain" :value="old('subdomain')" required />
+                    .{{ config('tenancy.central_domains')[0] }}
+                </div>
+            </div>
+
             <div class="mt-4">
                 <x-jet-label for="password" value="{{ __('Password') }}" />
                 <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />

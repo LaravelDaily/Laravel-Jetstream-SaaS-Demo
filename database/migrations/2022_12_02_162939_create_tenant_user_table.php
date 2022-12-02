@@ -7,20 +7,14 @@ use Illuminate\Database\Migrations\Migration;
 return new class extends Migration {
     public function up()
     {
-        Schema::create('tasks', function (Blueprint $table) {
-            $table->id();
-
-            $table->string('name');
-            $table->foreignId('category_id')->constrained();
-            $table->foreignId('user_id')->constrained();
+        Schema::create('tenant_user', function (Blueprint $table) {
             $table->foreignId('tenant_id')->constrained();
-
-            $table->timestamps();
+            $table->foreignId('user_id')->constrained();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('tasks');
+        Schema::dropIfExists('tenant_user');
     }
 };
