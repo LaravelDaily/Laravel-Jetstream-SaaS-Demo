@@ -24,7 +24,7 @@ class TaskController extends Controller
 
         $categories = Category::pluck('name', 'id');
 
-        return view('categories.create', compact('categories'));
+        return view('tasks.create', compact('categories'));
     }
 
     public function store(TaskRequest $request): RedirectResponse
