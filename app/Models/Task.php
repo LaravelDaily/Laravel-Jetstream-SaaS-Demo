@@ -5,17 +5,13 @@ namespace App\Models;
 use App\Models\Scopes\TaskOwnerScope;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Stancl\Tenancy\Database\Concerns\BelongsToTenant;
 
 class Task extends Model
 {
-    protected $fillable = ['name', 'category_id', 'user_id'];
+    use BelongsToTenant;
 
-    protected static function booted()
-    {
-        parent::booted();
-
-        static::addGlobalScope(new TaskOwnerScope);
-    }
+    protected $fillable = ['name', 'category_id', 'user_id', 'tenant_id'];
 
     public function category(): BelongsTo
     {
