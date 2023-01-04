@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Task extends Model
 {
-    protected $fillable = ['name', 'category_id', 'user_id'];
+    protected $fillable = ['name', 'category_id', 'user_id', 'team_id'];
 
     protected static function booted()
     {
