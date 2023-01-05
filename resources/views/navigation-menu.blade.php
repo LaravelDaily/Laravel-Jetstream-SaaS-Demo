@@ -16,12 +16,6 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
 
-                    @role('admin')
-                        <x-jet-nav-link href="{{ route('categories.index') }}" :active="request()->routeIs('categories.*')">
-                            {{ __('Categories') }}
-                        </x-jet-nav-link>
-                    @endrole
-
                     <x-jet-nav-link href="{{ route('tasks.index') }}" :active="request()->routeIs('tasks.*')">
                         {{ __('Tasks') }}
                     </x-jet-nav-link>
@@ -150,12 +144,6 @@
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
-
-            @role('admin')
-                <x-jet-responsive-nav-link href="{{ route('categories.index') }}" :active="request()->routeIs('categories.*')">
-                    {{ __('Categories') }}
-                </x-jet-responsive-nav-link>
-            @endrole
 
             <x-jet-responsive-nav-link href="{{ route('tasks.index') }}" :active="request()->routeIs('tasks.*')">
                 {{ __('Tasks') }}
