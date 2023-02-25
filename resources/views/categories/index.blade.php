@@ -42,9 +42,9 @@
                                         <form action="{{ route('categories.destroy', $category) }}" method="POST" onsubmit="return confirm('Are you sure?')" style="display: inline-block;">
                                             @csrf
                                             @method('DELETE')
-                                            <x-jet-danger-button type="submit">
+                                            <x-danger-button type="submit">
                                                 Delete
-                                            </x-jet-danger-button>
+                                            </x-danger-button>
                                         </form>
                                     </td>
                                 </tr>
