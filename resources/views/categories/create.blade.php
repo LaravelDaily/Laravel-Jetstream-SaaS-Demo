@@ -11,20 +11,20 @@
                     @csrf
 
                     <div>
-                        <x-jet-label for="name" :value="__('Name')" />
-                        <x-jet-input type="text"
+                        <x-label for="name" :value="__('Name')" />
+                        <x-input type="text"
                                      id="name"
                                      name="name"
                                      class="block w-full"
                                      value="{{ old('name') }}"
                                      required />
-                        <x-jet-input-error for="name" class="mt-2" />
+                        <x-input-error for="name" class="mt-2" />
                     </div>
 
                     <div class="mt-4">
-                        <x-jet-button>
+                        <x-button>
                             {{ __('Submit') }}
-                        </x-jet-button>
+                        </x-button>
                     </div>
                 </form>
 
